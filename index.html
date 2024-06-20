@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/overall.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+  </head>
+  <body>
+    <!--thanh menu -->
+    <header>
+      <div id="menu-bar" class="fas fa-bars"></div>
+
+      <a href="#" class="logo"> <span>M</span>RM</a>
+      <nav class="navbar">
+        <div class="dropdown">
+          <a href="#" id="book">Book</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Travel</a></li>
+            <li><a href="holtel.html">Holtel</a></li>
+            <li><a href="#">Restaurant</a></li>
+          </ul>
+        </div>
+        <a href="#" id="col-menu">Travel</a>
+        <a href="#" id="col-menu">Holtel</a>
+        <a href="#" id="col-menu">Restaurant</a>
+        <a href="#services">Service</a>
+        <a href="#explore-section">Explore</a>
+      </nav>
+
+      <div class="icons">
+        <i class="fas fa-user" id="login-btn"></i>
+      </div>
+    </header>
+    <!-- thanh menu -->
+    <div class="login-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+      <form action="">
+        <h3>Đăng nhập</h3>
+        <p>Tên đăng nhập hoặc email</p>
+        <input
+          type="text"
+          class="box"
+          placeholder="Nhập tên đăng nhập hoặc email"
+        />
+        <p>Mật khẩu</p>
+        <input type="password" class="box" placeholder="Nhập mật khẩu" />
+        <input type="submit" value="Đăng nhập ngay" class="btn" />
+        <input type="checkbox" id="remember" />
+        <label for="remember">Nhớ tài khoản</label>
+        <p>Quên mật khẩu? <a href="#">Ấn tại đây</a></p>
+        <p>
+          Không có tài khoản? <a href="#" id="go-to-register">Đăng ký ngay</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="register-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+      <form action="">
+        <h3>Đăng ký</h3>
+        <p>Tên đăng nhập</p>
+        <input type="text" class="box" placeholder="Tên đăng nhập" />
+        <p>Họ và tên</p>
+        <input type="text" class="box" placeholder="Ví dụ: 'Nguyễn Văn A'" />
+        <p>Email</p>
+        <input type="email" class="box" placeholder="Nhập email" />
+        <p>Mật khẩu</p>
+        <input type="password" class="box" placeholder="Nhập mật khẩu" />
+        <p>Xác nhận Mật khẩu</p>
+        <input type="re-password" class="box" placeholder="Nhập lại mật khẩu" />
+        <input type="submit" value="Xác nhận" class="btn" />
+        <input type="checkbox" id="remember" />
+        <label for="remember">Nhớ tài khoản</label>
+        <p>Đã có tài khoản? <a href="#" id="go-to-login">Đăng nhập ngay</a></p>
+      </form>
+    </div>
+
+    <!--main-->
+    <main class="hero-section" id="hero-section">
+      <!--background-->
+      <div class="background">
+        <video class="background-video" autoplay muted loop>
+          <source src="images/Dubai.mp4" type="video/mp4" />
+        </video>
+        <div class="slider-grid">
+          <div class="grid-item hide">
+            <link rel="stylesheet" href="images/HaLongBay.mp4" />
+          </div>
+          <div class="grid-item hide"></div>
+          <div class="grid-item hide"></div>
+          <div class="grid-item hide"></div>
+          <div class="grid-item hide"></div>
+          <div class="grid-item hide"></div>
+        </div>
+      </div>
+      <!--background-->
+
+      <div class="hero-section-content" data-aos="fade-up">
+        <h1 class="hero-section-title">Chào mừng đến với MRM</h1>
+        <p class="hero-section-sub-heading"></p>
+      </div>
+
+      <!-- Scroll down image -->
+      <img
+        src="images/down arrow.png"
+        class="scroll-down-icon"
+        alt="scroll down"
+      />
+    </main>
+
+    <section class="services-section" id="services">
+      <h1 class="section-title" data-aos="fade-up">Chúng tôi có gì ?</h1>
+      <p class="section-para" data-aos="fade-up">
+        Những trải nghiệm trọn gói cho bạn tận hưởng chuyến đi hấp dẫn
+      </p>
+      <!--Nội dung lưới  của services-->
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up">
+          <div class="circle"></div>
+          <i class="fas fa-plane card-icon"></i>
+          <!--PLANE-->
+          <p class="service-text">Chuyến bay nhanh và an toàn</p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up">
+          <div class="circle"></div>
+          <i class="fas fa-hotel card-icon"> </i>
+          <!--HOTEL-->
+          <p class="service-text">Khách sạn chất lượng và sang trọng</p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up">
+          <div class="circle"></div>
+          <i class="fas fa-utensils card-icon"> </i>
+          <!--FOOD-->
+          <p class="service-text">Thức ăn ngon và hấp dẫn</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="explore-section" id="explore-section">
+      <h1 class="section-title" data-aos="fade-up">Khám phá</h1>
+      <p class="section-para" data-aos="fade-up">
+        Thế giới quanh ta thật rộng lớn
+      </p>
+
+      <div class="tours-container">
+        <div class="tour-card" data-aos="fade-up">
+          <img src="images/australia.png" class="tour-img" alt="" />
+          <div class="tour-body">
+            <h1 class="tour-name">Úc</h1>
+            <p class="tour-action">Xem quốc gia</p>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up">
+          <img src="images/maldives.png" class="tour-img" alt="" />
+          <div class="tour-body">
+            <h1 class="tour-name">Maldives</h1>
+            <p class="tour-action">Xem quốc gia</p>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up">
+          <img src="images/paris.png" class="tour-img" alt="" />
+          <div class="tour-body">
+            <h1 class="tour-name">Pháp</h1>
+            <p class="tour-action">Xem quốc gia</p>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up">
+          <img src="images/dubai.png" class="tour-img" alt="" />
+          <div class="tour-body">
+            <h1 class="tour-name">Dubai</h1>
+            <p class="tour-action">Xem quốc gia</p>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up">
+          <img src="images/india.png" class="tour-img" alt="" />
+          <div class="tour-body">
+            <h1 class="tour-name">Ấn Độ</h1>
+            <p class="tour-action">Xem quốc gia</p>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up">
+          <img src="images/italy.png" class="tour-img" alt="" />
+          <div class="tour-body">
+            <h1 class="tour-name">Ý</h1>
+            <p class="tour-action">Xem quốc gia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>Dịch vụ</h3>
+          <a href="#">Đặt vé du lịch</a>
+          <a href="#">Đặt phòng khách sạn</a>
+          <a href="#">Đặt bàn nhà hàng</a>
+          <h3>Theo dõi chúng tôi</h3>
+          <a href="#">
+            <i class="fa-brands fa-facebook" style="color: #74c0fc"></i>
+            &nbsp;&nbsp;&nbsp;Facebook</a
+          >
+          <a href="#"
+            ><i class="fa-brands fa-square-instagram" style="color: #b31982"></i
+            >&nbsp;&nbsp;&nbsp;Instagram</a
+          >
+          <a href="#"
+            ><i class="fa-brands fa-twitter" style="color: #74c0fc"></i
+            >&nbsp;&nbsp;&nbsp;Twitter</a
+          >
+          <a href="#"
+            ><i class="fa-brands fa-telegram" style="color: #74c0fc"></i
+            >&nbsp;&nbsp;&nbsp;Telegram</a
+          >
+          <a href="#"
+            ><i class="fa-solid fa-envelope" style="color: #cfc344"></i
+            >&nbsp;&nbsp;&nbsp;Email</a
+          >
+        </div>
+
+        <div class="box">
+          <h3>Về chúng tôi</h3>
+          <p>"Chất lượng - Uy tín - Tận tâm"</p>
+          <p>Du lịch: Đặt vé máy bay nhanh chóng, tiết kiệm</p>
+          <p>Khách sạn: Kết nối hàng ngàn khách sạn từ bình</p>
+          <p>Nhà hàng: Đa dạng lựa chọn ẩm thực, từ sang trọng đến</p>
+          <p>Hỗ trợ: Đội ngũ chuyên nghiệp, nhiệt tình, hỗ trợ 24/7</p>
+        </div>
+
+        <div class="box">
+          <h3>Khác</h3>
+          <p>MRM Affiliate</p>
+          <p>MRM Blog</p>
+          <p>Chính Sách Quyền Riêng</p>
+          <p>Điều khoản & Điều kiện</p>
+          <p>Quy chế hoạt động</p>
+          <p>Đăng ký nơi nghỉ của bạn</p>
+          <p>Đăng ký doanh nghiệp hoạt động du lịch của bạn</p>
+          <p>Khu vực báo chí</p>
+          <p>Vulnerability Disclosure Program</p>
+        </div>
+
+        <div class="box">
+          <h3>Đối tác thanh toán</h3>
+          <img src="images/doitac.png" alt="" />
+        </div>
+      </div>
+
+      <h1 class="credit">Copyright © 2024 MRM. All rights reserved</h1>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        
+        $('.dropdown-menu').parent().addClass('has-child');
+      });
+    </script>
+    <script src="js/overall.js"></script>
+  </body>
+</html>

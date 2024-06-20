@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+header .navbar a#col-menu {
+    display: none;
+}
+
+/* Styling for the navbar links */
+header .navbar a {
+    color: #fff;
+    font-size: 2.5rem;
+    margin: 0 2rem;
+    position: relative;
+    text-decoration: none;
+}
+
+/* Styling for the dropdown menu */
+header .navbar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+header .navbar .dropdown .dropdown-menu {
+    display: none;
+    /* Hide the dropdown menu by default */
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header .navbar .dropdown .dropdown-menu li {
+    display: block;
+}
+
+header .navbar .dropdown .dropdown-menu li a {
+    color: #fff;
+    padding: 12px 5px;
+    text-decoration: none;
+    display: block;
+    font-size: 2rem;
+}
+
+header .navbar .dropdown .dropdown-menu li a:hover {
+
+    color: #0a9cdb;
+}
+
+header .navbar .dropdown .dropdown-menu li:hover {
+    background-color: #575757;
+}
+
+/* Show the dropdown menu on hover */
+header .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+
+header .icons i {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+header .icons i:hover {
+    color: var(--blue);
+}
+
+header .navbar>.has-child::after{
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    padding: 10px 0px;
+    font-size: 12px;
+    top: 0px;
+    right: 0px;
+}
+
+
+/* Ensure both the link and its ::after pseudo-element change color on hover */
+header .navbar .dropdown:hover > a,
+header .navbar .dropdown:hover > a::after {
+    color: var(--blue);
+}
+
+
+@media (max-width:768px) {
+
+    #menu-bar {
+        display: initial;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: #333;
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar a#col-menu {
+        display: block;
+    }
+
+    header .navbar a#book {
+        display: none;
+    }
+
+    header .navbar .dropdown {
+        display: block;
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background: #222;
+    }
+
+}
