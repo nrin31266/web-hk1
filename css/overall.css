@@ -284,7 +284,9 @@ header .logo span {
     color: #fff;
     padding: 80px 10vw;
 }
-
+.services a{
+    
+}
 .services-grid {
     width: 100%;
     display: grid;
@@ -339,17 +341,17 @@ header .logo span {
 
 
 .service-card:nth-child(1) .circle {
-    background: url('/WebHk2/images/plane.jpg');
+    background: url('../images/plane.jpg');
     background-size: cover;
 }
 
 .service-card:nth-child(2) .circle {
-    background: url('/WebHk2/images/hotel.jpg');
+    background: url('../images/hotel.jpg');
     background-size: cover;
 }
 
 .service-card:nth-child(3) .circle {
-    background: url('/WebHk2/images/food.jpg');
+    background: url('../images/food.jpg');
     background-size: cover;
 }
 
