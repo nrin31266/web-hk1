@@ -71,6 +71,9 @@ header .icons i {
 header .icons i:hover {
     color: var(--blue);
 }
+header .navbar a:hover{
+    color: var(--blue);
+}
 
 header .navbar>.has-child::after{
     content: "\f107";

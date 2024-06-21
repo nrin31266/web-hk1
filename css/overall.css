@@ -67,7 +67,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 9%;
+    padding: 1rem 9%;
 }
 
 header .logo {
@@ -155,7 +155,7 @@ header .logo span {
 
 .hero-section-title {
     font-family: 'Nunito', serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 80px;
     text-transform: capitalize;
 
@@ -181,7 +181,6 @@ header .logo span {
     from {
         bottom: 10%;
     }
-
     to {
         bottom: 8%;
     }
