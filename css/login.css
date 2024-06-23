@@ -45,7 +45,7 @@
     font-size: 1.7rem;
     color: #333;
     margin: .6rem 0;
-    border: .1rem solid rgba(0, 0, 0, .3);
+    border: .2rem solid rgba(0, 0, 0, .3);
     text-transform: none;
 }
 
@@ -97,3 +97,11 @@
     color: #fff;
     cursor: pointer;
 }
+
+.btn:hover{
+    background:rgba(255, 165, 0,.2);
+    color:var(--blue);
+}
+/* .error {
+    border-color: red;
+} */
