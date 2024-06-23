@@ -4,12 +4,23 @@ let formClose = document.querySelectorAll('#form-close');
 let registerForm = document.querySelector('.register-form-container');
 let goToRegister = document.querySelector('#go-to-register');
 let goToLogin = document.querySelector('#go-to-login');
+let goForgotPassword= document.querySelector('#go-to-forgot-password');
+let formUserActive=document.querySelector('.user-active-form-container');
+let formForgotPassword=document.querySelector('.forgot-password-form-container');
+let logOut = document.querySelector('#log-out');
+
 
 var loginStatus = false;
 var userKey = "";
 
 formBtn.addEventListener('click', () => {
-    loginForm.classList.add('active');
+    if(loginStatus==false){
+        loginForm.classList.add('active');
+    }else{
+        formUserActive.classList.add('active');
+        var userName=document.getElementById('user-account-name');
+        userName.textContent="Account: "+userKey;
+    }
 });
 
 // window.addEventListener('scroll', () => {
@@ -21,7 +32,23 @@ formClose.forEach(btn => {
     btn.addEventListener('click', () => {
         loginForm.classList.remove('active');
         registerForm.classList.remove('active');
+        formForgotPassword.classList.remove('active');
+        formUserActive.classList.remove('active');
     });
+});
+
+goForgotPassword.addEventListener('click', (e)=>{
+    e.preventDefault();
+    loginForm.classList.remove('active');
+    formForgotPassword.classList.add('active');
+});
+
+logOut.addEventListener('click', (e)=>{
+    e.preventDefault();
+    formUserActive.classList.remove('active');
+    loginForm.classList.add('active');
+    userKey="";
+    loginStatus=false;
 });
 
 goToRegister.addEventListener('click', (e) => {
@@ -140,15 +167,18 @@ function dangNhap() {
     var password = document.getElementById("mk-dn");
     if (userNameOrEmail.value.trim() === "") {
         alert("Vui lòng nhập tên tài khoản hoặc email!");
+        userNameOrEmail.focus();
         return;
     }
     if (password.value.trim() == "") {
         alert("Vui lòng nhập mật khẩu!");
+        password.focus();
         return;
     }
     var user = localStorage.getItem(userNameOrEmail.value);
     if (user == null) {
         alert("Tài khoản không tồn tại");
+        userNameOrEmail.focus();
         return;
     }
     var data = JSON.parse(user);
@@ -156,9 +186,12 @@ function dangNhap() {
     if (userNameOrEmail.value == data.userName || userNameOrEmail.value === data.email) {
         if (password.value == data.password) {
             alert("Đăng nhập thành công!");
+            loginStatus=true;
+            userKey=data.userName;
             loginForm.classList.remove('active');
         } else {
             alert("Sai mật khẩu!");
+            password.focus();
         }
     } else {
         alert("Đăng nhập thất bại!");

@@ -51,7 +51,7 @@
         <input type="submit" value="Đăng nhập ngay" class="btn" />
         <!-- <input type="checkbox" id="remember" />
         <label for="remember">Nhớ tài khoản</label> -->
-        <p>Quên mật khẩu? <a href="#">Ấn tại đây</a></p>
+        <p>Quên mật khẩu? <a href="#" id="go-to-forgot-password">Ấn tại đây</a></p>
         <p>
           Không có tài khoản? <a href="#" id="go-to-register">Đăng ký ngay</a>
         </p>
@@ -78,6 +78,31 @@
         <p>Đã có tài khoản? <a href="#" id="go-to-login">Đăng nhập ngay</a></p>
       </form>
     </div>
+
+    <div class="forgot-password-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+      <form action="">
+          <p>Email</p>
+          <input id="email-fg" type="email" class="box" placeholder="Nhập email">
+          <p>Mật khẩu mới</p>
+          <input id="pw-fg" type="password" class="box" placeholder="Nhập mật khẩu">
+          <input id="rpw-fg" type="password" class="box" placeholder="Nhập lại mật khẩu">
+          <p>Mã xác nhận ( kiểm tra email)</p>
+          <input type="number" class="box-code"> <button class="button-code">Lấy mã</button>
+          <input type="submit" value="Xác nhận" class="btn"/>
+      </form>
+    </div>
+
+    <div class="user-active-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+      <form action="">
+          <h3>Đã đăng nhập</h3>
+          <p><label for="" id="user-account-name"></label></p>
+          
+          <input type="submit" value="Đăng xuất" class="btn" id="log-out"/>
+      </form>
+    </div>
+
 
     <!--main-->
     <main class="hero-section" id="hero-section">

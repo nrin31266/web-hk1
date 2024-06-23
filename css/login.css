@@ -1,9 +1,14 @@
 /* CSS hiện tại của bạn */
+:root {
+    --blue: #0a9cdb;
+}
 
 .login-form-container,
-.register-form-container {
+.register-form-container,
+.forgot-password-form-container,
+.user-active-form-container {
     position: fixed;
-    top: -120%; 
+    top: -120%;
     left: 0;
     z-index: 10000;
     min-height: 100vh;
@@ -16,12 +21,16 @@
 }
 
 .login-form-container.active,
-.register-form-container.active {
+.register-form-container.active,
+.forgot-password-form-container.active,
+.user-active-form-container.active {
     top: 0;
 }
 
 .login-form-container form,
-.register-form-container form {
+.register-form-container form,
+.forgot-password-form-container form,
+.user-active-form-container form {
     margin: 2rem;
     padding: 1.5rem 2rem;
     border-radius: .5rem;
@@ -30,7 +39,9 @@
 }
 
 .login-form-container form h3,
-.register-form-container form h3 {
+.register-form-container form h3,
+.forgot-password-form-container form h3,
+.user-active-form-container form h3 {
     font-size: 3rem;
     color: #444;
     text-transform: uppercase;
@@ -39,7 +50,9 @@
 }
 
 .login-form-container form .box,
-.register-form-container form .box {
+.register-form-container form .box,
+.forgot-password-form-container form .box,
+.user-active-form-container form .box {
     width: 100%;
     padding: 1rem;
     font-size: 1.7rem;
@@ -50,46 +63,62 @@
 }
 
 .login-form-container form .box:focus,
-.register-form-container form .box:focus {
+.register-form-container form .box:focus,
+.forgot-password-form-container form .box:focus,
+.user-active-form-container form .box:focus {
     border-color: var(--blue);
 }
 
 .login-form-container form #remember,
-.register-form-container form #remember {
+.register-form-container form #remember,
+.forgot-password-form-container form #remember,
+.user-active-form-container form #remember {
     margin: 2rem 0;
 }
 
 .login-form-container form label,
-.register-form-container form label {
+.register-form-container form label,
+.forgot-password-form-container form label,
+.user-active-form-container form label {
     font-size: 1.5rem;
 }
 
 .login-form-container form .btn,
-.register-form-container form .btn {
+.register-form-container form .btn,
+.forgot-password-form-container form .btn,
+.user-active-form-container form .btn {
     display: block;
     width: 100%;
 }
 
 .login-form-container form p,
-.register-form-container form p {
+.register-form-container form p,
+.forgot-password-form-container form p,
+.user-active-form-container form p {
     padding: .5rem 0;
     font-size: 1.5rem;
     color: #666;
 }
 
 .login-form-container form p a,
-.register-form-container form p a {
+.register-form-container form p a,
+.forgot-password-form-container form p a,
+.user-active-form-container form p a {
     color: var(--blue);
 }
 
 .login-form-container form p a:hover,
-.register-form-container form p a:hover {
+.register-form-container form p a:hover,
+.forgot-password-form-container form p a:hover,
+.user-active-form-container form p a:hover {
     color: #333;
     text-decoration: underline;
 }
 
 .login-form-container #form-close,
-.register-form-container #form-close {
+.register-form-container #form-close,
+.forgot-password-form-container #form-close,
+.user-active-form-container #form-close {
     position: absolute;
     top: 2rem;
     right: 3rem;
@@ -98,10 +127,44 @@
     cursor: pointer;
 }
 
-.btn:hover{
-    background:rgba(255, 165, 0,.2);
-    color:var(--blue);
+.btn:hover {
+    background: rgba(255, 165, 0, .2);
+    color: var(--blue);
 }
+
+.forgot-password-form-container form .box-code {
+    border: .2rem solid rgba(0, 0, 0, .3);
+    width: 150px;
+    height: 30px;
+}
+
+.forgot-password-form-container form .button-code {
+    background-color: orange;
+    font-size: 1.5rem;
+    color: rgb(5, 5, 5);
+    border-radius: 2px;
+    width: 70px;
+    height: 30px;
+    border:2px solid orange;
+}
+
+.forgot-password-form-container form .button-code:hover {
+    
+    background: rgba(255, 165, 0, .2);
+    color: var(--blue);
+}
+
 /* .error {
     border-color: red;
 } */
+/* Ẩn các nút tick trên trình duyệt Chrome, Safari và Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.user-active-form-container form label{
+    font-size: 2rem;
+    color: #666;
+}

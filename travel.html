@@ -57,16 +57,16 @@
 
     <div class="login-form-container">
       <i class="fas fa-times" id="form-close"></i>
-      <form action="">
+      <form action="" onsubmit="return dangNhap()">
         <h3>Đăng nhập</h3>
         <p>Tên đăng nhập hoặc email</p>
-        <input type="text" class="box" placeholder="Nhập tên đăng nhập" />
+        <input id="tk-dn" type="text" class="box" placeholder="Nhập tên đăng nhập hoặc email">
         <p>Mật khẩu</p>
-        <input type="password" class="box" placeholder="Nhập mật khẩu" />
+        <input id="mk-dn" type="password" class="box" placeholder="Nhập mật khẩu" />
         <input type="submit" value="Đăng nhập ngay" class="btn" />
-        <input type="checkbox" id="remember" />
-        <label for="remember">Nhớ tài khoản</label>
-        <p>Quên mật khẩu? <a href="#">Ấn tại đây</a></p>
+        <!-- <input type="checkbox" id="remember" />
+        <label for="remember">Nhớ tài khoản</label> -->
+        <p>Quên mật khẩu? <a href="#" id="go-to-forgot-password">Ấn tại đây</a></p>
         <p>
           Không có tài khoản? <a href="#" id="go-to-register">Đăng ký ngay</a>
         </p>
@@ -75,22 +75,46 @@
 
     <div class="register-form-container">
       <i class="fas fa-times" id="form-close"></i>
-      <form action="">
+      <form action="" onsubmit="return dangKy()">
         <h3>Đăng ký</h3>
         <p>Tên đăng nhập</p>
-        <input type="text" class="box" placeholder="Tên đăng nhập" />
+        <input id="ten-dk" type="text" class="box" placeholder="Tên đăng nhập" />
         <p>Họ và tên</p>
-        <input type="text" class="box" placeholder="Ví dụ: 'Nguyễn Văn A'" />
+        <input id="ho-va-ten" type="text" class="box" placeholder="Ví dụ: 'Nguyễn Văn A'" />
         <p>Email</p>
-        <input type="email" class="box" placeholder="Nhập email" />
+        <input id="email-dk" type="email" class="box" placeholder="Nhập email" />
         <p>Mật khẩu</p>
-        <input type="password" class="box" placeholder="Nhập mật khẩu" />
+        <input id="mat-khau-dk" type="password" class="box" placeholder="Nhập mật khẩu" />
         <p>Xác nhận Mật khẩu</p>
-        <input type="re-password" class="box" placeholder="Nhập lại mật khẩu" />
-        <input type="submit" value="Xác nhận" class="btn" />
-        <input type="checkbox" id="remember" />
-        <label for="remember">Nhớ tài khoản</label>
+        <input id="nhap-lai-mat-kau-dk" type="password" class="box" placeholder="Nhập lại mật khẩu" />
+        <input type="submit" value="Xác nhận" class="btn"/>
+        <!-- <input type="checkbox" id="remember" />
+        <label for="remember">Nhớ tài khoản</label> -->
         <p>Đã có tài khoản? <a href="#" id="go-to-login">Đăng nhập ngay</a></p>
+      </form>
+    </div>
+
+    <div class="forgot-password-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+      <form action="">
+          <p>Email</p>
+          <input id="email-fg" type="email" class="box" placeholder="Nhập email">
+          <p>Mật khẩu mới</p>
+          <input id="pw-fg" type="password" class="box" placeholder="Nhập mật khẩu">
+          <input id="rpw-fg" type="password" class="box" placeholder="Nhập lại mật khẩu">
+          <p>Mã xác nhận ( kiểm tra email)</p>
+          <input type="number" class="box-code"> <button class="button-code">Lấy mã</button>
+          <input type="submit" value="Xác nhận" class="btn"/>
+      </form>
+    </div>
+
+    <div class="user-active-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+      <form action="">
+          <h3>Đã đăng nhập</h3>
+          <p><label for="" id="user-account-name"></label></p>
+          
+          <input type="submit" value="Đăng xuất" class="btn" id="log-out"/>
       </form>
     </div>
 

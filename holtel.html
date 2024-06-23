@@ -1,660 +1,676 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Khách sạn</title>
-    
-    <link rel="stylesheet" href="css/stype.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/navbar.css">
-  </head>
-  <body>
-    <header>
-      <div id="menu-bar" class="fas fa-bars"></div>
 
-      <a href="#" class="logo"><span>M</span>RM -Holtel</a>
-      <nav class="navbar">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-          <a href="#booking" id="book">Book</a>
-          <ul class="dropdown-menu">
-            <li><a href="travel.html">Travel</a></li>
-            <li><a href="#">Hotel</a></li>
-            <li><a href="#">Restaurant</a></li>
-          </ul>
-        </div>
-        <a href="travel.html" id="col-menu">Travel</a>        
-        <a href="#" id="col-menu">Holtel</a>
-        <a href="#" id="col-menu">Restaurant</a>
-        <a href="#packages">Package</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khách sạn</title>
 
-      <div class="icons">
-        <i class="fas fa-search" id="search-btn"></i>
-        <i class="fas fa-user" id="login-btn"></i>
+  <link rel="stylesheet" href="css/stype.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+<body>
+  <header>
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><span>M</span>RM -Holtel</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#booking" id="book">Book</a>
+        <ul class="dropdown-menu">
+          <li><a href="travel.html">Travel</a></li>
+          <li><a href="#">Hotel</a></li>
+          <li><a href="#">Restaurant</a></li>
+        </ul>
       </div>
+      <a href="travel.html" id="col-menu">Travel</a>
+      <a href="#" id="col-menu">Holtel</a>
+      <a href="#" id="col-menu">Restaurant</a>
+      <a href="#packages">Package</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-      <form action="" class="search-bar-container">
-        <input
-          type="search"
-          name=""
-          id="search-bar"
-          placeholder="Tìm kiếm tại đây..."
-        />
-        <label for="search-bar" class="fas fa-search"></label>
-      </form>
-    </header>
+    <div class="icons">
+      <i class="fas fa-search" id="search-btn"></i>
+      <i class="fas fa-user" id="login-btn"></i>
+    </div>
 
-    <div class="login-form-container">
-      <i class="fas fa-times" id="form-close"></i>
-      <form action="">
-          <h3>Đăng nhập</h3>
-          <p>Tên đăng nhập hoặc email</p>
-          <input type="text" class="box" placeholder="Nhập tên đăng nhập">
-          <p>Mật khẩu</p>
-          <input type="password" class="box" placeholder="Nhập mật khẩu">
-          <input type="submit" value="Đăng nhập ngay" class="btn">
-          <input type="checkbox" id="remember">
-          <label for="remember">Nhớ tài khoản</label>
-          <p>Quên mật khẩu? <a href="#">Ấn tại đây</a></p>
-          <p>Không có tài khoản? <a href="#" id="go-to-register">Đăng ký ngay</a></p>
-      </form>
+    <form action="" class="search-bar-container">
+      <input type="search" name="" id="search-bar" placeholder="Tìm kiếm tại đây..." />
+      <label for="search-bar" class="fas fa-search"></label>
+    </form>
+  </header>
+
+  <div class="login-form-container">
+    <i class="fas fa-times" id="form-close"></i>
+    <form action="" onsubmit="return dangNhap()">
+      <h3>Đăng nhập</h3>
+      <p>Tên đăng nhập hoặc email</p>
+      <input id="tk-dn" type="text" class="box" placeholder="Nhập tên đăng nhập hoặc email">
+      <p>Mật khẩu</p>
+      <input id="mk-dn" type="password" class="box" placeholder="Nhập mật khẩu" />
+      <input type="submit" value="Đăng nhập ngay" class="btn" />
+      <!-- <input type="checkbox" id="remember" />
+      <label for="remember">Nhớ tài khoản</label> -->
+      <p>Quên mật khẩu? <a href="#" id="go-to-forgot-password">Ấn tại đây</a></p>
+      <p>
+        Không có tài khoản? <a href="#" id="go-to-register">Đăng ký ngay</a>
+      </p>
+    </form>
   </div>
 
   <div class="register-form-container">
-      <i class="fas fa-times" id="form-close"></i>
-      <form action="">
-          <h3>Đăng ký</h3>
-          <p>Tên đăng nhập</p>
-          <input type="text" class="box" placeholder="Tên đăng nhập">
-          <p>Họ và tên</p>
-          <input type="text" class="box" placeholder="Ví dụ: 'Nguyễn Văn A'">
-          <p>Email</p>
-          <input type="email" class="box" placeholder="Nhập email">
-          <p>Mật khẩu</p>
-          <input type="password" class="box" placeholder="Nhập mật khẩu">
-          <p>Xác nhận Mật khẩu</p>
-          <input type="re-password" class="box" placeholder="Nhập lại mật khẩu">
-          <input type="submit" value="Xác nhận" class="btn">
-          <input type="checkbox" id="remember">
-          <label for="remember">Nhớ tài khoản</label>
-          <p>Đã có tài khoản? <a href="#" id="go-to-login">Đăng nhập ngay</a></p>
-      </form>
+    <i class="fas fa-times" id="form-close"></i>
+    <form action="" onsubmit="return dangKy()">
+      <h3>Đăng ký</h3>
+      <p>Tên đăng nhập</p>
+      <input id="ten-dk" type="text" class="box" placeholder="Tên đăng nhập" />
+      <p>Họ và tên</p>
+      <input id="ho-va-ten" type="text" class="box" placeholder="Ví dụ: 'Nguyễn Văn A'" />
+      <p>Email</p>
+      <input id="email-dk" type="email" class="box" placeholder="Nhập email" />
+      <p>Mật khẩu</p>
+      <input id="mat-khau-dk" type="password" class="box" placeholder="Nhập mật khẩu" />
+      <p>Xác nhận Mật khẩu</p>
+      <input id="nhap-lai-mat-kau-dk" type="password" class="box" placeholder="Nhập lại mật khẩu" />
+      <input type="submit" value="Xác nhận" class="btn"/>
+      <!-- <input type="checkbox" id="remember" />
+      <label for="remember">Nhớ tài khoản</label> -->
+      <p>Đã có tài khoản? <a href="#" id="go-to-login">Đăng nhập ngay</a></p>
+    </form>
   </div>
 
-    <section class="home" id="home">
-      <div class="content">
-        <h3>Khách Sạn Đẳng Cấp</h3>
-        <p>Điểm Dừng Chân Lý Tưởng Cho Mọi Hành Trình</p>
-        <a href="#" class="btn">Tìm Hiểu Thêm</a>
-      </div>
+  <div class="forgot-password-form-container">
+    <i class="fas fa-times" id="form-close"></i>
+    <form action="">
+        <p>Email</p>
+        <input id="email-fg" type="email" class="box" placeholder="Nhập email">
+        <p>Mật khẩu mới</p>
+        <input id="pw-fg" type="password" class="box" placeholder="Nhập mật khẩu">
+        <input id="rpw-fg" type="password" class="box" placeholder="Nhập lại mật khẩu">
+        <p>Mã xác nhận ( kiểm tra email)</p>
+        <input type="number" class="box-code"> <button class="button-code">Lấy mã</button>
+        <input type="submit" value="Xác nhận" class="btn"/>
+    </form>
+  </div>
 
-      <div class="controls">
-        <span class="vid-btn active" data-src="images/vdr6.mp4"></span>
-        <span class="vid-btn" data-src="images/vdr5.mp4"></span>
-        <span class="vid-btn" data-src="images/vdr4.mp4"></span>
-        <span class="vid-btn" data-src="images/vdr1.mp4"></span>
-      </div>
-  
-      <div class="video-container">
-        <video
-          src="images/vdr6.mp4"id="video-slider"loop autoplay muted></video>
-      </div>
-    </section>
+  <div class="user-active-form-container">
+    <i class="fas fa-times" id="form-close"></i>
+    <form action="">
+        <h3>Đã đăng nhập</h3>
+        <p><label for="" id="user-account-name"></label></p>
+        
+        <input type="submit" value="Đăng xuất" class="btn" id="log-out"/>
+    </form>
+  </div>
 
-    <section class="book" id="booking">
-      <h1 class="heading">
-        <span>B</span>
-        <span>o</span>
-        <span>o</span>
-        <span>k</span>
-        <span>i</span>
-        <span>n</span>
-        <span>g</span>
-        <!-- <span class="space"></span>
+  <section class="home" id="home">
+    <div class="content">
+      <h3>Khách Sạn Đẳng Cấp</h3>
+      <p>Điểm Dừng Chân Lý Tưởng Cho Mọi Hành Trình</p>
+      <a href="#" class="btn">Tìm Hiểu Thêm</a>
+    </div>
+
+    <div class="controls">
+      <span class="vid-btn active" data-src="images/vdr6.mp4"></span>
+      <span class="vid-btn" data-src="images/vdr5.mp4"></span>
+      <span class="vid-btn" data-src="images/vdr4.mp4"></span>
+      <span class="vid-btn" data-src="images/vdr1.mp4"></span>
+    </div>
+
+    <div class="video-container">
+      <video src="images/vdr6.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+  </section>
+
+  <section class="book" id="booking">
+    <h1 class="heading">
+      <span>B</span>
+      <span>o</span>
+      <span>o</span>
+      <span>k</span>
+      <span>i</span>
+      <span>n</span>
+      <span>g</span>
+      <!-- <span class="space"></span>
         <span>N</span>
         <span>G</span>
         <span>A</span>
         <span>Y</span> -->
-      </h1>
+    </h1>
 
-      <div class="row">
-        <div class="image">
-          <img src="images/book-img.jpeg" alt="" />
-        </div>
-
-        <form action="">
-          <div class="inputBox">
-            <h3>Khách sạn</h3>
-            <input type="text" placeholder="Tên khách sạn" />
-          </div>
-          <div class="inputBox">
-            <h3>Số lượng</h3>
-            <input type="number" placeholder="Số lượng người lưu trú" />
-          </div>
-          <div class="inputBox">
-            <h3>Thời gian đến</h3>
-            <input type="date" />
-          </div>
-          <div class="inputBox">
-            <h3>Thời gian rời đi</h3>
-            <input type="date" />
-          </div>
-          <input type="submit" class="btn" value="Đặt vé ngay" />
-        </form>
+    <div class="row">
+      <div class="image">
+        <img src="images/book-img.jpeg" alt="" />
       </div>
-    </section>
-    
-    <!-- packages section starts  -->
 
-    <section class="packages" id="packages">
-      <h1 class="heading">
-        <span>p</span>
-        <span>a</span>
-        <span>c</span>
-        <span>k</span>
-        <span>a</span>
-        <span>g</span>
-        <span>e</span>
-        <span>s</span>
-      </h1>
-
-      <div class="box-container">
-        <div class="box">
-          <img src="images/r1.png" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Intercontinental Danang Sun Peninsula Resort. Phường Thọ Quang, Bán Đảo Sơn Trà, TP. Đà Nẵng.</h3>
-            <p>
-              Khu nghỉ dưỡng hàng đầu của IHG tại Việt Nam khai trương vào tháng 6 năm 2012.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$30.00 <span>$120.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
+      <form action="">
+        <div class="inputBox">
+          <h3>Khách sạn</h3>
+          <input type="text" placeholder="Tên khách sạn" />
         </div>
-
-        <div class="box">
-          <img src="images/r2.png" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>JW Marriott Hotel Hanoi. 8 Đỗ Đức Dục, Quận Nam Từ Liêm, TP. Hà Nội</h3>
-            <p>
-              Hotel Hanoi có vị trí nằm tại trung tâm thủ đô Hà Nội, thuận tiện cho việc di chuyển của du khách.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$40.00 <span>$120.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
+        <div class="inputBox">
+          <h3>Số lượng</h3>
+          <input type="number" placeholder="Số lượng người lưu trú" />
         </div>
-
-        <div class="box">
-          <img src="images/r3.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>La Veranda Resort Phú Quốc - MGallery. Trần Hưng Đạo, TP. Phú Quốc, Kiên Giang.</h3>
-            <p>
-              Nép mình bên bãi cát Phú Quốc dọc bờ biển phía tây nam tuyệt đẹp và được bao bọc bởi những khu vườn xanh mướt.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$20.00 <span>$120.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
+        <div class="inputBox">
+          <h3>Thời gian đến</h3>
+          <input type="date" />
         </div>
-
-        <div class="box">
-          <img src="images/r4.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Vinpearl Luxury Nha Trang. Đảo Hòn Tre, Phường Vĩnh Nguyên, TP. Nha Trang, Khánh Hòa.</h3>
-            <p>
-              Vinpearl Luxury Nha Trang là điểm đến khó lòng bỏ qua với những du khách trân trọng từng giây phút an tĩnh tuyệt đối bên người mình yêu thương.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$40.00 <span>$120.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
+        <div class="inputBox">
+          <h3>Thời gian rời đi</h3>
+          <input type="date" />
         </div>
-
-        <div class="box">
-          <img src="images/r5.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>The Reverie Saigon. Tòa nhà Times Square 22-36 Nguyễn Huệ, Quận 1, TP. HCM.</h3>
-            <p>
-              The Reverie Saigon được biết đến là khách sạn sang trọng nhất và là thành viên duy nhất tại Việt Nam của Tổ Chức Các Khách Sạn Hàng Đầu Thế Giới.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$45.00 <span>$120.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <img src="images/r6.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>InterContinental Hanoi Landmark72. Tòa nhà Hanoi Landmark72 Lô E6, Quận Nam Từ Liêm, TP. Hà Nội.</h3>
-            <p>
-              InterContinental Hanoi Landmark72 là khách sạn sang trọng cao nhất Hà Nội với độ cao hơn 346m.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$34.00 <span>$120.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/r7.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Pullman Hà Nội. 40 Cát Linh, Quận Đống Đa, TP. Hà Nội.</h3>
-            <p>
-              Không gian tại khách sạn được trang trí sang trọng, đẳng cấp, mang phong cách hiện đại.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$24.00 <span>$120.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/r8.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Park Hyatt Sài Gòn. 2 Công Trường Lam Sơn, Bến Nghé, Quận 1, TP. HCM.</h3>
-            <p>
-              Khách sạn Park Hyatt với lối kiến trúc hiện đại, sang trọng sẽ đáp ứng tốt nhu cầu của du khách khi đến đây trải nghiệm, sử dụng dịch vụ.  
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$50.99 <span>$27.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/r9.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Vinpearl Resort & Spa Hạ Long. Đảo Rều, Bãi Cháy, Thành phố Hạ Long, Tỉnh Quảng Ninh.</h3>
-            <p>
-              Là khu nghỉ dưỡng đầu tiên & duy nhất tại miền Bắc Việt Nam được xây dựng hoàn toàn trên mặt biển.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$29.98 <span>$30.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/r10.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Dalat Edensee Resort & Spa. Khu chức năng VII.2, Hồ Tuyền Lâm, TP. Đà Lạt, Lâm Đồng.</h3>
-            <p>
-              Nép mình trong trái tim của “Black Forest Việt Nam”, ở độ cao 1.500 m so với mực nước biển.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$19.99 <span>$26.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <img src="images/r11.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Hanoi La Siesta Central Hotel & Spa. 94 Mã Mây, Quận Hoàn Kiếm, TP. Hà Nội</h3>
-            <p>
-              Hanoi La Siesta Central Hotel & Spa là điểm đến được rất nhiều du khách nước ngoài lựa chọn.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$19.99 <span>$26.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/r12.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Lotte Hotel Hanoi. 54 Liễu Giai, Quận Ba Đình, TP. Hà Nội.</h3>
-            <p>
-              Được xây dựng tại vị trí hạng nhất của thành phố Hà Nội, chỉ cần bước ra bên ngoài Lotte Hotel Hanoi.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$19.99 <span>$26.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/r13.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>H'mong Village Resort. Tráng Kìm, Huyện Quản Bạ , Hà Giang.</h3>
-            <p>
-              Tọa lạc tại tỉnh Hà Giang, H'mong Village Resort có hồ bơi ngoài trời, khu vườn, sảnh khách chung và sân hiên.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$19.99 <span>$26.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/r14.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>The Anam Cam Ranh. 3 Nguyễn Tất Thành, TP. Cam Ranh, Khánh Hòa.</h3>
-            <p>
-              Nằm bên bờ biển, The Anam Cam Ranh cung cấp chỗ nghỉ sang trọng với khu vườn cảnh tươi tốt bao quanh.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$19.99 <span>$26.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/r15.jpg" alt="" />
-          <div class="content">
-            <h3><i class="fas fa-map-marker-alt"></i>Capella Hanoi11 Lê Phụng Hiểu, Quận Hoàn Kiếm, TP. Hà Nội.</h3>
-            <p>
-              Tọa lạc tại thành phố Hà Nội, Capella Hanoi có trung tâm thể dục, sảnh khách chung, sân hiên và quầy bar.
-            </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">$19.99 <span>$26.00</span></div>
-            <a href="#" class="btn">Đặt phòng ngay</a>
-          </div>
-        </div>
-      </div>     
+        <input type="submit" class="btn" value="Đặt vé ngay" />
+      </form>
     </div>
-    </section>
+  </section>
 
-    <section class="gallery" id="gallery">
-      <h1 class="heading">
-        <span>g</span>
-        <span>a</span>
-        <span>l</span>
-        <span>l</span>
-        <span>e</span>
-        <span>r</span>
-        <span>y</span>
-      </h1>
-      <div class="box-container">
-        <div class="box">
-          <img src="images/pic1.jpg" alt="" />
-          <div class="content">
-            <h3>Khách sạn tuyệt vời</h3>
-            <p>
-              
-            </p>
-            <a href="#" class="btn">Xem thêm</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/pic2.jpg" alt="" />
-          <div class="content">
-            <h3>Khách sạn tuyệt vời</h3>
-            <p>
-              
-            </p>
-            <a href="#" class="btn">Xem thêm</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/pic3.jpg" alt="" />
-          <div class="content">
-            <h3>Khách sạn tuyệt vời</h3>
-            <p>
-              
-            </p>
-            <a href="#" class="btn">Xem thêm</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/pic4.jpg" alt="" />
-          <div class="content">
-            <h3>Khách sạn tuyệt vời</h3>
-            <p>
-              
-            </p>
-            <a href="#" class="btn">Xem thêm</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/pic5.jpg" alt="" />
-          <div class="content">
-            <h3>Khách sạn tuyệt vời</h3>
-            <p>
-              
-            </p>
-            <a href="#" class="btn">Xem thêm</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/pic6.jpg" alt="" />
-          <div class="content">
-            <h3>Khách sạn tuyệt vời</h3>
-            <p>
-              
-            </p>
-            <a href="#" class="btn">Xem thêm</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/pic7.jpg" alt="" />
-          <div class="content">
-            <h3>Khách sạn tuyệt vời</h3>
-            <p>
-              
-            </p>
-            <a href="#" class="btn">Xem thêm</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/pic8.jpg" alt="" />
-          <div class="content">
-            <h3>Khách sạn tuyệt vời</h3>
-            <p>
-              
-            </p>
-            <a href="#" class="btn">Xem thêm</a>
-          </div>
-        </div>
-      
-      </div>
-    </section>
+  <!-- packages section starts  -->
 
-    <section class="contact" id="contact">
-      <h1 class="heading">
-        <span>c</span>
-        <span>o</span>
-        <span>n</span>
-        <span>t</span>
-        <span>a</span>
-        <span>c</span>
-        <span>t</span>
-      </h1>
+  <section class="packages" id="packages">
+    <h1 class="heading">
+      <span>p</span>
+      <span>a</span>
+      <span>c</span>
+      <span>k</span>
+      <span>a</span>
+      <span>g</span>
+      <span>e</span>
+      <span>s</span>
+    </h1>
 
-      <div class="row">
-        <div class="image">
-          <img src="images/lienhe.jpg" alt="" />
-        </div>
-
-        <form action="">
-          <div class="inputBox">
-            <input type="text" placeholder="Tên" />
-            <input type="email" placeholder="Email" />
+    <div class="box-container">
+      <div class="box">
+        <img src="images/r1.png" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Intercontinental Danang Sun Peninsula Resort. Phường Thọ Quang, Bán
+            Đảo Sơn Trà, TP. Đà Nẵng.</h3>
+          <p>
+            Khu nghỉ dưỡng hàng đầu của IHG tại Việt Nam khai trương vào tháng 6 năm 2012.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
           </div>
-          <div class="inputBox">
-            <input type="number" placeholder="Số điện thoại" />
-            <input type="text" placeholder="Tiêu đề" />
-          </div>
-          <textarea
-            placeholder="Nội dung"
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
-          <input type="submit" class="btn" value="Gửi" />
-        </form>
-      </div>
-    </section>
-
-
-    <section class="footer">
-      <div class="box-container">
-        <div class="box">
-          <h3>Dịch vụ</h3>
-          <a href="#">Đặt vé du lịch</a>
-          <a href="#">Đặt phòng khách sạn</a>
-          <a href="#">Đặt bàn nhà hàng</a>
-          <h3>Theo dõi chúng tôi</h3>
-          <a href="#">
-            <i class="fa-brands fa-facebook" style="color: #74c0fc"></i>
-            &nbsp;&nbsp;&nbsp;Facebook</a
-          >
-          <a href="#"
-            ><i class="fa-brands fa-square-instagram" style="color: #b31982"></i
-            >&nbsp;&nbsp;&nbsp;Instagram</a
-          >
-          <a href="#"
-            ><i class="fa-brands fa-twitter" style="color: #74c0fc"></i
-            >&nbsp;&nbsp;&nbsp;Twitter</a
-          >
-          <a href="#"
-            ><i class="fa-brands fa-telegram" style="color: #74c0fc"></i
-            >&nbsp;&nbsp;&nbsp;Telegram</a
-          >
-          <a href="#"
-            ><i class="fa-solid fa-envelope" style="color: #cfc344"></i
-            >&nbsp;&nbsp;&nbsp;Email</a
-          >
-        </div>
-
-        <div class="box">
-          <h3>Về chúng tôi</h3>
-          <p>"Chất lượng - Uy tín - Tận tâm"</p>
-          <p>Du lịch: Đặt vé máy bay nhanh chóng, tiết kiệm</p>
-          <p>Khách sạn: Kết nối hàng ngàn khách sạn từ bình dân đến cao cấp</p>
-          <p>Nhà hàng: Đa dạng lựa chọn ẩm thực, từ sang trọng đến địa phương</p>
-          <p>Hỗ trợ: Đội ngũ chuyên nghiệp, nhiệt tình, hỗ trợ 24/7</p>
-        </div>
-
-        <div class="box">
-          <h3>Khác</h3>
-          <p>MRM Affiliate</p>
-          <p>MRM Blog</p>
-          <p>Chính Sách Quyền Riêng</p>
-          <p>Điều khoản & Điều kiện</p>
-          <p>Quy chế hoạt động</p>
-          <p>Đăng ký nơi nghỉ của bạn</p>
-          <p>Đăng ký doanh nghiệp hoạt động du lịch của bạn</p>
-          <p>Khu vực báo chí</p>
-          <p>Vulnerability Disclosure Program</p>
-        </div>
-
-        <div class="box">
-          <h3>Đối tác thanh toán</h3>
-          <img src="images/doitac.png" alt="" />
+          <div class="price">$30.00 <span>$120.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
         </div>
       </div>
 
-      <h1 class="credit">Copyright © 2024 MRM. All rights reserved</h1>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
-      $(document).ready(function () {
-        
-        $('.dropdown-menu').parent().addClass('has-child');
-      });
-    </script>
-    
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/login.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/video.js"></script>
-    
-  </body>
+      <div class="box">
+        <img src="images/r2.png" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>JW Marriott Hotel Hanoi. 8 Đỗ Đức Dục, Quận Nam Từ Liêm, TP. Hà Nội
+          </h3>
+          <p>
+            Hotel Hanoi có vị trí nằm tại trung tâm thủ đô Hà Nội, thuận tiện cho việc di chuyển của du khách.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$40.00 <span>$120.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="images/r3.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>La Veranda Resort Phú Quốc - MGallery. Trần Hưng Đạo, TP. Phú Quốc,
+            Kiên Giang.</h3>
+          <p>
+            Nép mình bên bãi cát Phú Quốc dọc bờ biển phía tây nam tuyệt đẹp và được bao bọc bởi những khu vườn xanh
+            mướt.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$20.00 <span>$120.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="images/r4.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Vinpearl Luxury Nha Trang. Đảo Hòn Tre, Phường Vĩnh Nguyên, TP. Nha
+            Trang, Khánh Hòa.</h3>
+          <p>
+            Vinpearl Luxury Nha Trang là điểm đến khó lòng bỏ qua với những du khách trân trọng từng giây phút an tĩnh
+            tuyệt đối bên người mình yêu thương.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$40.00 <span>$120.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="images/r5.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>The Reverie Saigon. Tòa nhà Times Square 22-36 Nguyễn Huệ, Quận 1,
+            TP. HCM.</h3>
+          <p>
+            The Reverie Saigon được biết đến là khách sạn sang trọng nhất và là thành viên duy nhất tại Việt Nam của Tổ
+            Chức Các Khách Sạn Hàng Đầu Thế Giới.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$45.00 <span>$120.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="images/r6.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>InterContinental Hanoi Landmark72. Tòa nhà Hanoi Landmark72 Lô E6,
+            Quận Nam Từ Liêm, TP. Hà Nội.</h3>
+          <p>
+            InterContinental Hanoi Landmark72 là khách sạn sang trọng cao nhất Hà Nội với độ cao hơn 346m.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$34.00 <span>$120.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/r7.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Pullman Hà Nội. 40 Cát Linh, Quận Đống Đa, TP. Hà Nội.</h3>
+          <p>
+            Không gian tại khách sạn được trang trí sang trọng, đẳng cấp, mang phong cách hiện đại.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$24.00 <span>$120.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/r8.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Park Hyatt Sài Gòn. 2 Công Trường Lam Sơn, Bến Nghé, Quận 1, TP. HCM.
+          </h3>
+          <p>
+            Khách sạn Park Hyatt với lối kiến trúc hiện đại, sang trọng sẽ đáp ứng tốt nhu cầu của du khách khi đến đây
+            trải nghiệm, sử dụng dịch vụ.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$50.99 <span>$27.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/r9.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Vinpearl Resort & Spa Hạ Long. Đảo Rều, Bãi Cháy, Thành phố Hạ
+            Long, Tỉnh Quảng Ninh.</h3>
+          <p>
+            Là khu nghỉ dưỡng đầu tiên & duy nhất tại miền Bắc Việt Nam được xây dựng hoàn toàn trên mặt biển.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$29.98 <span>$30.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/r10.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Dalat Edensee Resort & Spa. Khu chức năng VII.2, Hồ Tuyền Lâm, TP. Đà
+            Lạt, Lâm Đồng.</h3>
+          <p>
+            Nép mình trong trái tim của “Black Forest Việt Nam”, ở độ cao 1.500 m so với mực nước biển.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$19.99 <span>$26.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="images/r11.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Hanoi La Siesta Central Hotel & Spa. 94 Mã Mây, Quận Hoàn Kiếm, TP.
+            Hà Nội</h3>
+          <p>
+            Hanoi La Siesta Central Hotel & Spa là điểm đến được rất nhiều du khách nước ngoài lựa chọn.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$19.99 <span>$26.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/r12.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Lotte Hotel Hanoi. 54 Liễu Giai, Quận Ba Đình, TP. Hà Nội.</h3>
+          <p>
+            Được xây dựng tại vị trí hạng nhất của thành phố Hà Nội, chỉ cần bước ra bên ngoài Lotte Hotel Hanoi.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$19.99 <span>$26.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/r13.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>H'mong Village Resort. Tráng Kìm, Huyện Quản Bạ , Hà Giang.</h3>
+          <p>
+            Tọa lạc tại tỉnh Hà Giang, H'mong Village Resort có hồ bơi ngoài trời, khu vườn, sảnh khách chung và sân
+            hiên.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$19.99 <span>$26.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/r14.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>The Anam Cam Ranh. 3 Nguyễn Tất Thành, TP. Cam Ranh, Khánh Hòa.</h3>
+          <p>
+            Nằm bên bờ biển, The Anam Cam Ranh cung cấp chỗ nghỉ sang trọng với khu vườn cảnh tươi tốt bao quanh.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$19.99 <span>$26.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/r15.jpg" alt="" />
+        <div class="content">
+          <h3><i class="fas fa-map-marker-alt"></i>Capella Hanoi11 Lê Phụng Hiểu, Quận Hoàn Kiếm, TP. Hà Nội.</h3>
+          <p>
+            Tọa lạc tại thành phố Hà Nội, Capella Hanoi có trung tâm thể dục, sảnh khách chung, sân hiên và quầy bar.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="price">$19.99 <span>$26.00</span></div>
+          <a href="#" class="btn">Đặt phòng ngay</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <h1 class="heading">
+      <span>g</span>
+      <span>a</span>
+      <span>l</span>
+      <span>l</span>
+      <span>e</span>
+      <span>r</span>
+      <span>y</span>
+    </h1>
+    <div class="box-container">
+      <div class="box">
+        <img src="images/pic1.jpg" alt="" />
+        <div class="content">
+          <h3>Khách sạn tuyệt vời</h3>
+          <p>
+
+          </p>
+          <a href="#" class="btn">Xem thêm</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/pic2.jpg" alt="" />
+        <div class="content">
+          <h3>Khách sạn tuyệt vời</h3>
+          <p>
+
+          </p>
+          <a href="#" class="btn">Xem thêm</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/pic3.jpg" alt="" />
+        <div class="content">
+          <h3>Khách sạn tuyệt vời</h3>
+          <p>
+
+          </p>
+          <a href="#" class="btn">Xem thêm</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/pic4.jpg" alt="" />
+        <div class="content">
+          <h3>Khách sạn tuyệt vời</h3>
+          <p>
+
+          </p>
+          <a href="#" class="btn">Xem thêm</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/pic5.jpg" alt="" />
+        <div class="content">
+          <h3>Khách sạn tuyệt vời</h3>
+          <p>
+
+          </p>
+          <a href="#" class="btn">Xem thêm</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/pic6.jpg" alt="" />
+        <div class="content">
+          <h3>Khách sạn tuyệt vời</h3>
+          <p>
+
+          </p>
+          <a href="#" class="btn">Xem thêm</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/pic7.jpg" alt="" />
+        <div class="content">
+          <h3>Khách sạn tuyệt vời</h3>
+          <p>
+
+          </p>
+          <a href="#" class="btn">Xem thêm</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/pic8.jpg" alt="" />
+        <div class="content">
+          <h3>Khách sạn tuyệt vời</h3>
+          <p>
+
+          </p>
+          <a href="#" class="btn">Xem thêm</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h1 class="heading">
+      <span>c</span>
+      <span>o</span>
+      <span>n</span>
+      <span>t</span>
+      <span>a</span>
+      <span>c</span>
+      <span>t</span>
+    </h1>
+
+    <div class="row">
+      <div class="image">
+        <img src="images/lienhe.jpg" alt="" />
+      </div>
+
+      <form action="">
+        <div class="inputBox">
+          <input type="text" placeholder="Tên" />
+          <input type="email" placeholder="Email" />
+        </div>
+        <div class="inputBox">
+          <input type="number" placeholder="Số điện thoại" />
+          <input type="text" placeholder="Tiêu đề" />
+        </div>
+        <textarea placeholder="Nội dung" name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit" class="btn" value="Gửi" />
+      </form>
+    </div>
+  </section>
+
+
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>Dịch vụ</h3>
+        <a href="#">Đặt vé du lịch</a>
+        <a href="#">Đặt phòng khách sạn</a>
+        <a href="#">Đặt bàn nhà hàng</a>
+        <h3>Theo dõi chúng tôi</h3>
+        <a href="#">
+          <i class="fa-brands fa-facebook" style="color: #74c0fc"></i>
+          &nbsp;&nbsp;&nbsp;Facebook</a>
+        <a href="#"><i class="fa-brands fa-square-instagram" style="color: #b31982"></i>&nbsp;&nbsp;&nbsp;Instagram</a>
+        <a href="#"><i class="fa-brands fa-twitter" style="color: #74c0fc"></i>&nbsp;&nbsp;&nbsp;Twitter</a>
+        <a href="#"><i class="fa-brands fa-telegram" style="color: #74c0fc"></i>&nbsp;&nbsp;&nbsp;Telegram</a>
+        <a href="#"><i class="fa-solid fa-envelope" style="color: #cfc344"></i>&nbsp;&nbsp;&nbsp;Email</a>
+      </div>
+
+      <div class="box">
+        <h3>Về chúng tôi</h3>
+        <p>"Chất lượng - Uy tín - Tận tâm"</p>
+        <p>Du lịch: Đặt vé máy bay nhanh chóng, tiết kiệm</p>
+        <p>Khách sạn: Kết nối hàng ngàn khách sạn từ bình dân đến cao cấp</p>
+        <p>Nhà hàng: Đa dạng lựa chọn ẩm thực, từ sang trọng đến địa phương</p>
+        <p>Hỗ trợ: Đội ngũ chuyên nghiệp, nhiệt tình, hỗ trợ 24/7</p>
+      </div>
+
+      <div class="box">
+        <h3>Khác</h3>
+        <p>MRM Affiliate</p>
+        <p>MRM Blog</p>
+        <p>Chính Sách Quyền Riêng</p>
+        <p>Điều khoản & Điều kiện</p>
+        <p>Quy chế hoạt động</p>
+        <p>Đăng ký nơi nghỉ của bạn</p>
+        <p>Đăng ký doanh nghiệp hoạt động du lịch của bạn</p>
+        <p>Khu vực báo chí</p>
+        <p>Vulnerability Disclosure Program</p>
+      </div>
+
+      <div class="box">
+        <h3>Đối tác thanh toán</h3>
+        <img src="images/doitac.png" alt="" />
+      </div>
+    </div>
+
+    <h1 class="credit">Copyright © 2024 MRM. All rights reserved</h1>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $('.dropdown-menu').parent().addClass('has-child');
+    });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/video.js"></script>
+
+</body>
+
 </html>
