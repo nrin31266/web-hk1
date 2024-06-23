@@ -26,12 +26,12 @@
         <ul class="dropdown-menu">
           <li><a href="travel.html">Travel</a></li>
           <li><a href="#">Hotel</a></li>
-          <li><a href="#">Restaurant</a></li>
+          <li><a href="retaurant.html">Restaurant</a></li>
         </ul>
       </div>
       <a href="travel.html" id="col-menu">Travel</a>
       <a href="#" id="col-menu">Holtel</a>
-      <a href="#" id="col-menu">Restaurant</a>
+      <a href="retaurant.html" id="col-menu">Restaurant</a>
       <a href="#packages">Package</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
@@ -151,22 +151,22 @@
         <img src="images/book-img.jpeg" alt="" />
       </div>
 
-      <form action="">
+      <form action="" onsubmit="return booking()">
         <div class="inputBox">
           <h3>Khách sạn</h3>
-          <input type="text" placeholder="Tên khách sạn" />
+          <input id="book1" type="text" placeholder="Tên khách sạn" />
         </div>
         <div class="inputBox">
           <h3>Số lượng</h3>
-          <input type="number" placeholder="Số lượng người lưu trú" />
+          <input id="book2" type="number" placeholder="Số lượng người lưu trú" />
         </div>
         <div class="inputBox">
           <h3>Thời gian đến</h3>
-          <input type="date" />
+          <input id="book3"  type="date" />
         </div>
         <div class="inputBox">
           <h3>Thời gian rời đi</h3>
-          <input type="date" />
+          <input id="book4"  type="date" />
         </div>
         <input type="submit" class="btn" value="Đặt vé ngay" />
       </form>
@@ -204,7 +204,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$30.00 <span>$120.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
 
@@ -224,7 +224,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$40.00 <span>$120.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
 
@@ -245,7 +245,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$20.00 <span>$120.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
 
@@ -266,7 +266,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$40.00 <span>$120.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
 
@@ -287,7 +287,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$45.00 <span>$120.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
 
@@ -307,7 +307,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$34.00 <span>$120.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
       <div class="box">
@@ -325,7 +325,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$24.00 <span>$120.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
       <div class="box">
@@ -345,7 +345,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$50.99 <span>$27.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
       <div class="box">
@@ -364,7 +364,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$29.98 <span>$30.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
       <div class="box">
@@ -383,7 +383,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$19.99 <span>$26.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
 
@@ -403,7 +403,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$19.99 <span>$26.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
       <div class="box">
@@ -421,7 +421,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$19.99 <span>$26.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
       <div class="box">
@@ -440,7 +440,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$19.99 <span>$26.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
       <div class="box">
@@ -458,7 +458,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$19.99 <span>$26.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
       <div class="box">
@@ -476,7 +476,7 @@
             <i class="far fa-star"></i>
           </div>
           <div class="price">$19.99 <span>$26.00</span></div>
-          <a href="#" class="btn">Đặt phòng ngay</a>
+          <a href="#" class="btn" id="book-now">Đặt phòng ngay</a>
         </div>
       </div>
     </div>
@@ -670,7 +670,7 @@
   <script src="js/login.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/video.js"></script>
-
+  <script src="js/book.js"></script>
 </body>
 
 </html>

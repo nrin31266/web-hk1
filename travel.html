@@ -160,22 +160,22 @@
         <div class="image">
           <img src="images/booknow.jpg" alt="" />
         </div>
-        <form action="">
+        <form action="" onsubmit="return booking()">
           <div class="inputBox">
             <h3>where to</h3>
-            <input type="text" placeholder="Place name" />
+            <input id="book1" type="text" placeholder="Place name" />
           </div>
           <div class="inputBox">
             <h3>how many</h3>
-            <input type="number" placeholder="Number of guests" />
+            <input id="book2" type="number" placeholder="Number of guests" />
           </div>
           <div class="inputBox">
             <h3>arrivals</h3>
-            <input type="date" />
+            <input id="book3" type="date" />
           </div>
           <div class="inputBox">
             <h3>leaving</h3>
-            <input type="date" />
+            <input id="book4" type="date" />
           </div>
           <input type="submit" class="btn" value="book now" />
         </form>
@@ -216,7 +216,7 @@
             <div class="price">
               1.570.000 VNĐ/Khách <span>2.000.000 VNĐ -3.000.000</span>
             </div>
-            <a href="#" class="btn">book now</a>
+            <a href="#" class="btn" id="book-now">book now</a>
           </div>
         </div>
 
@@ -236,7 +236,7 @@
               <i class="far fa-star"></i>
             </div>
             <div class="price">Free <span> 200 000 VNĐ-350 000 VNĐ</span></div>
-            <a href="#" class="btn">book now</a>
+            <a href="#" class="btn" id="book-now">book now</a>
           </div>
         </div>
 
@@ -261,7 +261,7 @@
             <div class="price">
               100 000 VNĐ <span>300 000 VNĐ-500 000 VNĐ </span>
             </div>
-            <a href="#" class="btn">book now</a>
+            <a href="#" class="btn" id="book-now">book now</a>
           </div>
         </div>
 
@@ -281,7 +281,7 @@
               <i class="far fa-star"></i>
             </div>
             <div class="price">Free <span>50 000 VNĐ</span></div>
-            <a href="#" class="btn">book now</a>
+            <a href="#" class="btn" id="book-now">book now</a>
           </div>
         </div>
 
@@ -301,7 +301,7 @@
               <i class="far fa-star"></i>
             </div>
             <div class="price">120 000 VNĐ <span>200 000 VNĐ</span></div>
-            <a href="#" class="btn">book now</a>
+            <a href="#" class="btn" id="book-now">book now</a>
           </div>
         </div>
 
@@ -322,7 +322,7 @@
             <div class="price">
               200 000 VNĐ <span> 300 000 VNĐ- 500 000 VNĐ</span>
             </div>
-            <a href="#" class="btn">book now</a>
+            <a href="#" class="btn" id="book-now">book now</a>
           </div>
         </div>
       </div>
@@ -574,5 +574,6 @@
     <script src="js/login.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/video.js"></script>
+    <script src="js/book.js"></script>
   </body>
 </html>

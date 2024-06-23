@@ -1,0 +1,141 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us:</title>
+    <link rel="shortcut icon" href="/images/LogoMRM.png" type="image/x-icon">
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: #010615;
+    color: white;
+    overflow: hidden;
+    }
+
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    }
+
+    .single-card {
+    position: relative;
+    width: 240px;
+    height: 300px;
+    background: #010615;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    transition: all 0.5s;
+    }
+
+    .single-card:hover {
+    height: 400px;
+    }
+
+    .single-card::before,
+    .single-card::after {
+    content: "";
+    background: linear-gradient(45deg, #ff05ac 0%, #ff05ac 18%, aqua 100%);
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    }
+
+    .single-card::after {
+    filter: blur(40px);
+    z-index: -2;
+    }
+
+    .card-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    }
+
+    img {
+    width: 100%;
+    height: 280px;
+    transition: 0.5s;
+    opacity: 0.1;
+    }
+
+    .content {
+    height: 90px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    }
+
+    .title {
+    font-size: 28px;
+    line-height: 10px;
+    }
+
+    .single-card:hover .content {
+    opacity: 1;
+    }
+
+    .single-card:hover img {
+    opacity: 1;
+    }
+    </style>
+    <body>
+    <div class="container">
+        <div class="single-card">
+        <div class="card-img">
+            <img src="images/MICHAEL.jpg">
+        </div>
+        <div class="content">
+            <div class="title">Michael</div>
+            <p>Designer and Developer</p>
+        </div>
+        </div>
+
+        <div class="single-card">
+        <div class="card-img ">
+            <img src="images/Sunn.jpg">
+        </div>
+        <div class="content">
+            <div class="title">Sunn</div>
+            <p>Designer and Developer</p>
+        </div>
+        </div>
+
+        <div class="single-card">
+        <div class="card-img">
+            <img src="images/rinn.png">
+        </div>
+        <div class="content">
+            <div class="title">Rin</div>
+            <p>Designer and Developer</p>
+        </div>
+        </div>
+    </div>
+
+
+    Resources 
+    </body>
+    </html>
