@@ -10,16 +10,18 @@ let formForgotPassword=document.querySelector('.forgot-password-form-container')
 let logOut = document.querySelector('#log-out');
 
 
-var loginStatus = false;
-var userKey = "";
+// var loginStatus = false;
+// var userKey = "";
 
 formBtn.addEventListener('click', () => {
-    if(loginStatus==false){
+    var isLoggedIn = localStorage.getItem('isLoggedIn');
+    if(isLoggedIn==null){
         loginForm.classList.add('active');
     }else{
         formUserActive.classList.add('active');
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));  
         var userName=document.getElementById('user-account-name');
-        userName.textContent="Account: "+userKey;
+        userName.textContent="Account: "+currentUser.userName;
     }
 });
 
@@ -47,8 +49,9 @@ logOut.addEventListener('click', (e)=>{
     e.preventDefault();
     formUserActive.classList.remove('active');
     loginForm.classList.add('active');
-    userKey="";
-    loginStatus=false;
+    // Xóa dữ liệu khi người dùng đăng xuất
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('isLoggedIn');
 });
 
 goToRegister.addEventListener('click', (e) => {
@@ -186,8 +189,9 @@ function dangNhap() {
     if (userNameOrEmail.value == data.userName || userNameOrEmail.value === data.email) {
         if (password.value == data.password) {
             alert("Đăng nhập thành công!");
-            loginStatus=true;
-            userKey=data.userName;
+            // Chuyển đối tượng user thành chuỗi JSON để lưu vào localStorage
+            localStorage.setItem('currentUser', JSON.stringify(data));
+            localStorage.setItem('isLoggedIn', true); // Có thể dùng để kiểm tra trạng thái đăng nhập
             loginForm.classList.remove('active');
         } else {
             alert("Sai mật khẩu!");
