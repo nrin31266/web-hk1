@@ -4,10 +4,12 @@ let formClose = document.querySelectorAll('#form-close');
 let registerForm = document.querySelector('.register-form-container');
 let goToRegister = document.querySelector('#go-to-register');
 let goToLogin = document.querySelector('#go-to-login');
-let goForgotPassword= document.querySelector('#go-to-forgot-password');
-let formUserActive=document.querySelector('.user-active-form-container');
-let formForgotPassword=document.querySelector('.forgot-password-form-container');
+let goForgotPassword = document.querySelector('#go-to-forgot-password');
+let formUserActive = document.querySelector('.user-active-form-container');
+let formForgotPassword = document.querySelector('.forgot-password-form-container');
 let logOut = document.querySelector('#log-out');
+let getCode = document.querySelector('.button-code');
+let forgotSubmit = document.querySelector('#btn-fg-pass');
 
 
 // var loginStatus = false;
@@ -15,15 +17,107 @@ let logOut = document.querySelector('#log-out');
 
 formBtn.addEventListener('click', () => {
     var isLoggedIn = localStorage.getItem('isLoggedIn');
-    if(isLoggedIn==null){
+    if (isLoggedIn == null) {
         loginForm.classList.add('active');
-    }else{
+    } else {
         formUserActive.classList.add('active');
-        var currentUser = JSON.parse(localStorage.getItem('currentUser'));  
-        var userName=document.getElementById('user-account-name');
-        userName.textContent="Account: "+currentUser.userName;
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        var userName = document.getElementById('user-account-name');
+        userName.textContent = "Account: " + currentUser.userName;
     }
 });
+var otpNumber = 0;
+
+getCode.addEventListener('click', (e) => {
+    e.preventDefault();
+    var email = document.getElementById('email-fg');
+    if (email.value.trim() === "") {
+        alert("Vui lòng nhập email!");
+        return false;
+    }
+
+    if (localStorage.getItem(email.value) === null) {
+        alert("Email sai!");
+        email.focus();
+        return false;
+    }
+
+    otpNumber = generateSixDigitNumber();
+    alert("OTP: " + otpNumber);
+
+});
+forgotSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+    var inOtp = document.getElementById('box-code');
+    var email = document.getElementById('email-fg');
+    var password = document.getElementById('pw-fg');
+    var rePassword = document.getElementById('rpw-fg');
+
+
+    // Kiểm tra password không được chứa khoảng trắng
+    if (password.value.includes(' ')) {
+        alert("Mật khẩu không được chứa khoảng trắng!");
+        password.focus();
+        return false;
+    }
+
+    // Kiểm tra rePassword không được chứa khoảng trắng
+    if (rePassword.value.includes(' ')) {
+        alert("Mật khẩu nhập lại không được chứa khoảng trắng!");
+        rePassword.focus();
+        return false;
+    }
+    // Kiểm tra mật khẩu không được rỗng
+    if (password.value === "") {
+        alert("Vui lòng nhập mật khẩu!");
+        password.focus();
+        return false;
+    }
+
+    // Kiểm tra mật khẩu nhập lại phải trùng khớp
+    if (password.value !== rePassword.value) {
+        alert("Mật khẩu nhập lại không khớp!");
+        rePassword.focus();
+        return false;
+    }
+
+    if (inOtp.value.trim() === "") {
+        alert('Bạn chưa nhập mã otp!');
+        return false;
+    }
+    if (inOtp.value == otpNumber) {
+        var user = localStorage.getItem(email.value);
+        if (user) {
+            var data = JSON.parse(user); // Chuyển chuỗi JSON thành đối tượng
+            data.password = password.value; // Thay đổi giá trị của biến trong đối tượng
+
+            var updatedUserJSON = JSON.stringify(data); // Chuyển đối tượng trở lại thành chuỗi JSON
+            localStorage.setItem(email.value, updatedUserJSON); // Lưu lại vào localStorage
+
+            var user1 = localStorage.getItem(data.userName);
+            if (user1) {
+                var data1 = JSON.parse(user1); // Chuyển chuỗi JSON thành đối tượng
+                data1.password = password.value; // Thay đổi giá trị của biến trong đối tượng
+
+                var updatedUserJSON1 = JSON.stringify(data1); // Chuyển đối tượng trở lại thành chuỗi JSON
+                localStorage.setItem(data.userName, updatedUserJSON1); // Lưu lại vào localStorage
+            }
+
+            alert('Đổi mật khẩu thành công!');
+
+            formForgotPassword.classList.remove('active');
+            loginForm.classList.add('active');
+            clearForm(3);
+        } else {
+            alert('User not found.');
+        }
+    }
+    else {
+        alert('Mã otp không hợp lệ!');
+    }
+    return false;
+});
+
 
 // window.addEventListener('scroll', () => {
 //     loginForm.classList.remove('active');
@@ -39,13 +133,13 @@ formClose.forEach(btn => {
     });
 });
 
-goForgotPassword.addEventListener('click', (e)=>{
+goForgotPassword.addEventListener('click', (e) => {
     e.preventDefault();
     loginForm.classList.remove('active');
     formForgotPassword.classList.add('active');
 });
 
-logOut.addEventListener('click', (e)=>{
+logOut.addEventListener('click', (e) => {
     e.preventDefault();
     formUserActive.classList.remove('active');
     loginForm.classList.add('active');
@@ -143,7 +237,6 @@ function dangKy() {
         fullName: fullName.value,
         email: email.value,
         password: password.value,
-        rePassword: rePassword.value
     };
 
     var json = JSON.stringify(user);
@@ -214,6 +307,19 @@ function clearForm(i) {
         var email = document.getElementById("email-dk").value = '';
         var password = document.getElementById("mat-khau-dk").value = '';
         var rePassword = document.getElementById("nhap-lai-mat-kau-dk").value = '';
+    } else if (i == 3) {
+        var inOtp = document.getElementById('box-code').value='';
+        var email = document.getElementById('email-fg').value='';
+        var password = document.getElementById('pw-fg').value='';
+        var rePassword = document.getElementById('rpw-fg').value='';
     }
 }
+function generateSixDigitNumber() {
+    // Tạo một số ngẫu nhiên từ 0 đến 999999
+    let randomNumber = Math.floor(Math.random() * 1000000);
 
+    // Đảm bảo rằng số này luôn có 6 chữ số bằng cách thêm số 0 ở đầu nếu cần thiết
+    let sixDigitNumber = randomNumber.toString().padStart(6, '0');
+
+    return sixDigitNumber;
+}
